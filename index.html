@@ -7,24 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables - Inspired by TILT Initiative */
+        /* CSS Variables - Clean & Impactful */
         :root {
-            --tilt-dark-blue: #0a1931;
-            --tilt-primary-blue: #1a5f7a;
-            --tilt-accent-blue: #2d8bae;
-            --tilt-light-blue: #57c1eb;
-            --tilt-white: #ffffff;
-            --tilt-light-gray: #f8f9fa;
-            --tilt-gray: #6c757d;
-            --tilt-dark-gray: #343a40;
-            --tilt-gradient: linear-gradient(135deg, var(--tilt-primary-blue) 0%, var(--tilt-accent-blue) 100%);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary-blue: #0a1931;
+            --accent-blue: #1a5f7a;
+            --light-blue: #57c1eb;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --gray: #6c757d;
+            --gradient: linear-gradient(135deg, var(--accent-blue) 0%, var(--light-blue) 100%);
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
         }
 
-        /* Reset & Base Styles */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -38,9 +34,8 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--tilt-dark-gray);
-            background-color: var(--tilt-white);
-            overflow-x: hidden;
+            color: var(--primary-blue);
+            background-color: var(--white);
         }
 
         .container {
@@ -50,47 +45,47 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation - Inspired by TILT */
+        /* Header - Clean & Professional */
         header {
-            background-color: var(--tilt-white);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             transition: var(--transition);
-        }
-
-        header.scrolled {
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            height: 80px;
+            padding: 18px 0;
+            height: 70px;
         }
 
-        .logo-container {
+        /* UPDATED LOGO - Clean T like the first version */
+        .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             text-decoration: none;
         }
 
-        .logo-symbol {
-            width: 40px;
-            height: 40px;
-            background: var(--tilt-gradient);
-            border-radius: 8px;
+        .logo-circle {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--tilt-white);
-            font-weight: 800;
-            font-size: 20px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 22px;
+            font-family: 'Inter', sans-serif;
         }
 
         .logo-text {
@@ -99,43 +94,44 @@
         }
 
         .logo-main {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: var(--tilt-dark-blue);
-            line-height: 1.2;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+            line-height: 1;
+            font-family: 'Inter', sans-serif;
         }
 
         .logo-sub {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: var(--tilt-gray);
-            letter-spacing: 0.5px;
+            color: var(--accent-blue);
+            margin-top: 3px;
+            font-family: 'Inter', sans-serif;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 32px;
-            margin: 0;
-            padding: 0;
+            gap: 35px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--tilt-dark-gray);
+            color: var(--primary-blue);
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
             position: relative;
-            padding: 8px 0;
+            padding: 5px 0;
         }
 
         nav a:hover {
-            color: var(--tilt-primary-blue);
+            color: var(--accent-blue);
         }
 
         nav a.active {
-            color: var(--tilt-primary-blue);
+            color: var(--accent-blue);
         }
 
         nav a.active::after {
@@ -145,7 +141,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: var(--tilt-gradient);
+            background: var(--gradient);
             border-radius: 1px;
         }
 
@@ -154,136 +150,134 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--tilt-dark-blue);
+            color: var(--primary-blue);
             cursor: pointer;
             padding: 8px;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: var(--transition);
         }
 
         .mobile-menu-btn:hover {
-            background-color: var(--tilt-light-gray);
+            background: var(--light-gray);
         }
 
-        /* Hero Section - Clean & Professional */
+        /* Hero Section - Updated Title */
         .hero {
-            background-color: var(--tilt-dark-blue);
-            color: var(--tilt-white);
-            padding: 160px 0 100px;
-            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 120px 0 60px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero-background {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(42, 109, 145, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(90, 195, 235, 0.1) 0%, transparent 50%);
-            z-index: 1;
+                radial-gradient(circle at 10% 20%, rgba(26, 95, 122, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(87, 193, 235, 0.1) 0%, transparent 40%);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
             max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero-tagline {
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--tilt-light-blue);
-            margin-bottom: 20px;
+            color: var(--light-blue);
+            margin-bottom: 25px;
             display: inline-block;
-            padding: 8px 16px;
-            background: rgba(90, 195, 235, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(90, 195, 235, 0.2);
+            padding: 12px 24px;
+            background: rgba(87, 193, 235, 0.1);
+            border-radius: 50px;
+            border: 2px solid rgba(87, 193, 235, 0.2);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        /* UPDATED HERO TITLE - Like the very first version */
+        .hero-title {
+            font-size: 4.2rem;
             font-weight: 800;
-            margin-bottom: 24px;
             line-height: 1.1;
-            background: linear-gradient(to right, #ffffff, var(--tilt-light-blue));
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #ffffff, var(--light-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -1px;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin-bottom: 40px;
+        .hero-subtitle {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 45px;
+            line-height: 1.7;
+            max-width: 650px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
+            gap: 12px;
+            padding: 18px 36px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            gap: 10px;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
-            background: var(--tilt-gradient);
-            color: var(--tilt-white);
-            box-shadow: 0 4px 15px rgba(26, 95, 122, 0.3);
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(26, 95, 122, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(26, 95, 122, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 95, 122, 0.4);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--tilt-white);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.25);
         }
 
         .btn-outline:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: var(--tilt-white);
-            transform: translateY(-2px);
+            border-color: var(--white);
+            transform: translateY(-3px);
         }
 
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Section Styles */
-        .section {
+        /* About Section - Clean Cards */
+        .about {
             padding: 100px 0;
-        }
-
-        .section-light {
-            background-color: var(--tilt-light-gray);
+            background: var(--light-gray);
         }
 
         .section-title {
@@ -292,430 +286,406 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--tilt-dark-blue);
-            margin-bottom: 16px;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
-        .section-title .subtitle {
+        .section-subtitle {
             font-size: 1.1rem;
-            color: var(--tilt-gray);
+            color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        /* Mission Section */
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .mission-content h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--tilt-dark-blue);
-            margin-bottom: 24px;
-            line-height: 1.3;
-        }
-
-        .mission-content p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--tilt-gray);
-            margin-bottom: 20px;
-        }
-
-        .mission-visual {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .mission-card {
-            background: var(--tilt-white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        .mission-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .mission-card i {
-            font-size: 2rem;
-            color: var(--tilt-primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .mission-card h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--tilt-dark-blue);
-            margin-bottom: 12px;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .project-card {
-            background: var(--tilt-white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-header {
-            padding: 30px 30px 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .project-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            color: var(--tilt-white);
-        }
-
-        .eco-icon {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-        }
-
-        .health-icon {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
-        }
-
-        .social-icon {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-        }
-
-        .project-header h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--tilt-dark-blue);
-            margin-bottom: 10px;
-        }
-
-        .project-body {
-            padding: 20px 30px 30px;
-        }
-
-        .project-body p {
-            color: var(--tilt-gray);
-            margin-bottom: 25px;
             line-height: 1.6;
         }
 
-        .project-features {
-            list-style: none;
-            margin-bottom: 25px;
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
-        .project-features li {
+        .about-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .about-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: var(--gradient);
+            border-radius: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            color: var(--tilt-gray);
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            box-shadow: 0 6px 15px rgba(26, 95, 122, 0.2);
         }
 
-        .project-features i {
-            color: var(--tilt-primary-blue);
-            font-size: 0.9rem;
+        .about-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
         }
 
-        /* Timeline Section */
+        .about-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Timeline - Visual Story */
+        .timeline {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
         .timeline-container {
             max-width: 900px;
             margin: 0 auto;
             position: relative;
         }
 
-        .timeline-container::before {
-            content: '';
+        .timeline-line {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             width: 2px;
             height: 100%;
-            background: var(--tilt-light-blue);
-            opacity: 0.3;
+            background: var(--gradient);
+            opacity: 0.2;
         }
 
         .timeline-item {
-            margin-bottom: 40px;
+            display: flex;
+            margin-bottom: 60px;
             position: relative;
-            width: calc(50% - 40px);
         }
 
         .timeline-item:nth-child(odd) {
-            margin-left: auto;
+            justify-content: flex-start;
+            padding-right: calc(50% + 40px);
         }
 
         .timeline-item:nth-child(even) {
-            margin-right: auto;
+            justify-content: flex-end;
+            padding-left: calc(50% + 40px);
         }
 
         .timeline-content {
-            background: var(--tilt-white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            position: relative;
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 450px;
+            border-left: 4px solid var(--accent-blue);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .timeline-date {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--light-gray);
+            border-radius: 50px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            line-height: 1.7;
         }
 
         .timeline-marker {
             position: absolute;
-            width: 16px;
-            height: 16px;
-            background: var(--tilt-gradient);
+            width: 24px;
+            height: 24px;
+            background: var(--white);
+            border: 4px solid var(--accent-blue);
             border-radius: 50%;
-            top: 30px;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .timeline-item:nth-child(odd) .timeline-marker {
-            right: -48px;
+        /* Activities */
+        .activities {
+            padding: 100px 0;
+            background: var(--light-gray);
         }
 
-        .timeline-item:nth-child(even) .timeline-marker {
-            left: -48px;
-        }
-
-        .timeline-date {
-            display: inline-block;
-            padding: 6px 16px;
-            background: var(--tilt-light-gray);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--tilt-primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .timeline-content h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--tilt-dark-blue);
-            margin-bottom: 10px;
-        }
-
-        /* Announcements */
-        .announcements-grid {
+        .activities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
 
-        .announcement-card {
-            background: var(--tilt-white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            border-left: 4px solid var(--tilt-primary-blue);
+        .activity-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .announcement-card:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-lg);
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
         }
 
-        .announcement-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
+        .activity-header {
+            padding: 35px 35px 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .announcement-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--tilt-light-gray);
-            border-radius: 10px;
+        .activity-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-gray);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--tilt-primary-blue);
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .activity-header h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .activity-header p {
+            color: var(--gray);
             font-size: 1rem;
         }
 
-        .announcement-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--tilt-dark-blue);
+        .activity-body {
+            padding: 25px 35px 35px;
         }
 
-        .announcement-date {
-            font-size: 0.85rem;
-            color: var(--tilt-gray);
-            margin-bottom: 10px;
+        .activity-body p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .activity-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            padding: 8px 18px;
+            background: var(--light-gray);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-blue);
         }
 
         /* Footer */
         footer {
-            background: var(--tilt-dark-blue);
-            color: var(--tilt-white);
+            background: var(--primary-blue);
+            color: var(--white);
             padding: 80px 0 40px;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            gap: 50px;
             margin-bottom: 50px;
         }
 
-        .footer-col h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
+        .footer-col h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 25px;
-            color: var(--tilt-white);
+            color: var(--white);
         }
 
-        .footer-logo {
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .logo-symbol {
-            margin-bottom: 15px;
-        }
-
-        .footer-logo .logo-main {
-            color: var(--tilt-white);
-            font-size: 1.5rem;
-        }
-
-        .footer-logo .logo-sub {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
-            color: var(--tilt-white);
-            transform: translateX(5px);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
         }
 
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--tilt-white);
+            color: var(--white);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 1.1rem;
         }
 
         .social-link:hover {
-            background: var(--tilt-primary-blue);
+            background: var(--accent-blue);
             transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-blue);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            line-height: 1.5;
+        }
+
+        .footer-contact i {
+            margin-top: 3px;
+            color: var(--light-blue);
+            min-width: 18px;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
         }
 
-        .tilt-acknowledgement {
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tilt-acknowledgement a {
-            color: var(--tilt-light-blue);
+        .tilt-link {
+            color: var(--light-blue);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            margin-left: 5px;
+            transition: var(--transition);
         }
 
-        /* Responsive Design */
+        .tilt-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
+            .hero-title {
+                font-size: 3rem;
             }
             
-            .mission-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .hero-subtitle {
+                font-size: 1.6rem;
             }
             
-            .projects-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin: 0 auto 50px;
+            .hero-description {
+                font-size: 1.2rem;
             }
             
-            .timeline-container::before {
+            .timeline-line {
                 left: 30px;
             }
             
-            .timeline-item {
-                width: calc(100% - 70px);
-                margin-left: 70px !important;
-                margin-right: 0 !important;
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding: 0 0 0 80px;
+                justify-content: flex-start;
             }
             
             .timeline-marker {
-                left: -56px !important;
-                right: auto !important;
+                left: 21px;
+            }
+            
+            .timeline-content {
+                max-width: 100%;
             }
         }
 
@@ -726,16 +696,18 @@
             
             nav ul {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                background: var(--tilt-white);
+                background: var(--white);
                 flex-direction: column;
-                padding: 40px 20px;
+                padding: 40px 30px;
                 gap: 0;
-                box-shadow: var(--shadow-lg);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
                 transition: var(--transition);
                 z-index: 999;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
             }
             
             nav ul.active {
@@ -748,71 +720,110 @@
             
             nav ul a {
                 display: block;
-                padding: 15px 0;
+                padding: 18px 0;
                 border-bottom: 1px solid rgba(0,0,0,0.05);
+                font-size: 1.1rem;
             }
             
             nav ul a:last-child {
                 border-bottom: none;
             }
             
-            .hero {
-                padding: 140px 0 80px;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .hero h1 {
-                font-size: 2.3rem;
+            .hero-subtitle {
+                font-size: 1.4rem;
             }
             
-            .hero p {
+            .hero-description {
                 font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .about-card,
+            .activity-card {
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 90vh;
+                padding: 100px 0 50px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-tagline {
+                font-size: 0.9rem;
+                letter-spacing: 3px;
+                padding: 10px 20px;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
             
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .mission-visual {
+            .about-grid,
+            .activities-grid {
                 grid-template-columns: 1fr;
             }
             
-            .announcements-grid {
-                grid-template-columns: 1fr;
+            .timeline-content {
+                padding: 25px;
             }
             
             .container {
                 padding: 0 15px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.8rem;
+            }
+            
+            .logo-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header id="header">
+    <header>
         <div class="container header-container">
-            <a href="#home" class="logo-container">
-                <div class="logo-symbol">T</div>
+            <a href="#" class="logo">
+                <!-- UPDATED: Simple circular T like the first version -->
+                <div class="logo-circle">T</div>
                 <div class="logo-text">
+                    <!-- UPDATED: Clean TILT CLUB text -->
                     <div class="logo-main">TILT CLUB</div>
                     <div class="logo-sub">FMV Işık Lisesi, Nişantaşı</div>
                 </div>
@@ -825,235 +836,188 @@
             <nav>
                 <ul id="navMenu">
                     <li><a href="#home" class="active">Ana Sayfa</a></li>
-                    <li><a href="#mission">Misyon</a></li>
-                    <li><a href="#projects">Projeler</a></li>
-                    <li><a href="#timeline">Plan</a></li>
-                    <li><a href="#announcements">Duyurular</a></li>
+                    <li><a href="#about">Hakkımızda</a></li>
+                    <li><a href="#timeline">Yıllık Plan</a></li>
+                    <li><a href="#activities">Etkinlikler</a></li>
                     <li><a href="#contact">İletişim</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
+        <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-tagline">TILT Destekli Kulüp</div>
-                <h1>Sosyal Sorumlulukta İnovasyon</h1>
-                <p>FMV Işık Lisesi'nde toplumsal farkındalık, çevre bilinci ve sürdürülebilirlik projeleri geliştiriyor, değişimin öncüsü oluyoruz.</p>
-                <div class="btn-group">
-                    <a href="#projects" class="btn btn-primary">Projelerimizi Keşfedin</a>
-                    <a href="#timeline" class="btn btn-outline">Yıllık Planı Görüntüle</a>
+                <div class="hero-tagline">TILT İnisiyatifi ile</div>
+                <!-- UPDATED: Hero title like the very first version -->
+                <h1 class="hero-title">Sosyal Sorumlulukta İnovasyon</h1>
+                <p class="hero-description">
+                    FMV Işık Lisesi'nde TILT İnisiyatifi desteğiyle toplumsal farkındalık, çevre bilinci ve sürdürülebilirlik için çalışıyoruz. 
+                    Öğrenciler olarak değişimi başlatıyor, geleceği şekillendiriyoruz.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#timeline" class="btn btn-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Yıllık Planımız
+                    </a>
+                    <a href="#activities" class="btn btn-outline">
+                        <i class="fas fa-hands-helping"></i>
+                        Etkinliklerimiz
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="section" id="mission">
+    <!-- About -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Kulübümüzün Misyonu</h2>
-                <p class="subtitle">TILT İnisiyatifi desteğiyle FMV Işık Lisesi'nde toplumsal değişim yaratıyoruz</p>
+                <h2>Kulübümüz Hakkında</h2>
+                <p class="section-subtitle">FMV Işık Lisesi'ndeki TILT destekli kulübümüz, sosyal sorumluluk ve farkındalık projeleriyle öne çıkıyor</p>
             </div>
             
-            <div class="mission-grid">
-                <div class="mission-content">
-                    <h3>Öğrenciler Olarak Topluma Katkı Sağlıyoruz</h3>
-                    <p>TILT Club olarak, öğrencilerin sosyal sorumluluk bilincini geliştirmeyi, çevreye duyarlı projeler üretmeyi ve toplumsal farkındalık yaratmayı hedefliyoruz.</p>
-                    <p>Küresel TILT misyonunu okulumuzda uygulayarak, gençlerin aktif vatandaşlar olarak topluma katkıda bulunmalarını teşvik ediyoruz.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Network</h3>
+                    <p>TILT İnisiyatifi'nin küresel ağına dahil olarak, yerel projelerimizle dünya çapında bir etki yaratıyoruz.</p>
                 </div>
                 
-                <div class="mission-visual">
-                    <div class="mission-card">
-                        <i class="fas fa-users"></i>
-                        <h4>Topluluk</h4>
-                        <p>Meraklı öğrencilerden oluşan aktif bir topluluğuz</p>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-hands-helping"></i>
                     </div>
-                    <div class="mission-card">
+                    <h3>Sosyal Sorumluluk</h3>
+                    <p>Toplumsal sorunlara duyarlı, çözüm odaklı projeler geliştirerek aktif vatandaşlar yetiştiriyoruz.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
                         <i class="fas fa-leaf"></i>
-                        <h4>Sürdürülebilirlik</h4>
-                        <p>Çevre dostu projeler ve bilinçlendirme çalışmaları</p>
                     </div>
-                    <div class="mission-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>İnovasyon</h4>
-                        <p>Geleneksel olmayan çözümler ve yaratıcı yaklaşımlar</p>
-                    </div>
-                    <div class="mission-card">
-                        <i class="fas fa-handshake"></i>
-                        <h4>İşbirliği</h4>
-                        <p>Takım çalışması ve ortak hedefler için birlikte çalışmak</p>
-                    </div>
+                    <h3>Sürdürülebilirlik</h3>
+                    <p>Çevre bilinci ve sürdürülebilir yaşam projeleriyle gelecek nesillere daha iyi bir dünya bırakıyoruz.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section section-light" id="projects">
+    <!-- Timeline -->
+    <section class="timeline" id="timeline">
         <div class="container">
             <div class="section-title">
-                <h2>Ana Proje Alanlarımız</h2>
-                <p class="subtitle">Yıllık planımızda odaklandığımız temel projeler</p>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon eco-icon">
-                            <i class="fas fa-recycle"></i>
-                        </div>
-                        <h3>EcoCatch Projesi</h3>
-                        <p>Çevre Koruma ve Sürdürülebilirlik</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Atık yönetimi, geri dönüşüm sistemleri ve çevre bilinci oluşturma üzerine projeler geliştiriyoruz.</p>
-                        <ul class="project-features">
-                            <li><i class="fas fa-check"></i> "TILT ve Doğa" temalı çalışmalar</li>
-                            <li><i class="fas fa-check"></i> Okul içi geri dönüşüm sistemleri</li>
-                            <li><i class="fas fa-check"></i> Çevre bilinci seminerleri</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Proje Detayları</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon health-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3>NeuroPrognos</h3>
-                        <p>Sağlık Farkındalığı ve Destek</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Mental sağlık, engelli hakları ve sağlık okuryazarlığı konularında farkındalık çalışmaları yürütüyoruz.</p>
-                        <ul class="project-features">
-                            <li><i class="fas fa-check"></i> Engelli hakları seminerleri</li>
-                            <li><i class="fas fa-check"></i> Mental sağlık farkındalığı</li>
-                            <li><i class="fas fa-check"></i> Sağlık okuryazarlığı projeleri</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Proje Detayları</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon social-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <h3>Sosyal Farkındalık</h3>
-                        <p>Toplumsal Duyarlılık Projeleri</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Kadın hakları, çocuk hakları, sosyal eşitlik ve toplumsal sorunlara yönelik çalışmalar gerçekleştiriyoruz.</p>
-                        <ul class="project-features">
-                            <li><i class="fas fa-check"></i> Kadın hakları çalışmaları</li>
-                            <li><i class="fas fa-check"></i> Sosyal eşitlik projeleri</li>
-                            <li><i class="fas fa-check"></i> Toplumsal farkındalık etkinlikleri</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Proje Detayları</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="section" id="timeline">
-        <div class="container">
-            <div class="section-title">
-                <h2>Yıllık Çalışma Planımız</h2>
-                <p class="subtitle">Eğitim yılı boyunca gerçekleştireceğimiz önemli etkinlikler</p>
+                <h2>Yıllık Çalışma Planı</h2>
+                <p class="section-subtitle">Eğitim yılı boyunca gerçekleştireceğimiz önemli etkinlikler ve projeler</p>
             </div>
             
             <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Ekim - Kasım</div>
-                        <h4>Proje Analiz ve Planlama Dönemi</h4>
-                        <p>EcoCatch ve NeuroPrognos projelerinin detaylı analizi. Sosyal sorumluluk projelerinin araştırılması ve planlanması.</p>
-                    </div>
                     <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">EYLÜL - EKİM</div>
+                        <h3>Kulüp Kurulum & Proje Başlangıç</h3>
+                        <p>Tanışma toplantıları, yönetim kurulu seçimi, EcoCatch ve NeuroPrognos projelerinin planlaması. Sosyal sorumluluk projelerinin araştırılması.</p>
+                    </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Aralık</div>
-                        <h4>Sosyal Farkındalık Ayı</h4>
-                        <p>3 Aralık Dünya Engelliler Günü ve 5 Aralık Kadın Hakları Günü kapsamında seminerler, söyleşiler ve farkındalık çalışmaları.</p>
-                    </div>
                     <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">KASIM - ARALIK</div>
+                        <h3>Sosyal Farkındalık Dönemi</h3>
+                        <p>Dünya Engelliler Günü ve Kadın Hakları Günü etkinlikleri. Yarışma başvuruları, sosyal sorumluluk projelerinin uygulanmaya başlaması.</p>
+                    </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Şubat - Mart</div>
-                        <h4>Sağlık ve Çevre Odaklı Çalışmalar</h4>
-                        <p>Dünya Kanser Günü, Dünya Kediler Günü ve Dünya Kadınlar Günü kapsamında çalışmalar. Sosyal sorumluluk projelerinin uygulanması.</p>
-                    </div>
                     <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">OCAK - ŞUBAT</div>
+                        <h3>Çevre ve Sağlık Odaklı Çalışmalar</h3>
+                        <p>Enerji Tasarrufu Haftası, Dünya Kanser Günü ve Dünya Kediler Günü etkinlikleri. Projelerin devamı ve değerlendirmeler.</p>
+                    </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Nisan</div>
-                        <h4>"TILT ve Doğa" Temalı Projeler</h4>
-                        <p>Çevre bilincinin artırılmasına yönelik projeler. 23 Nisan Çocuk Bayramı kapsamında çocuklara yönelik etkinlikler.</p>
-                    </div>
                     <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">MART - NİSAN</div>
+                        <h3>"TILT ve Doğa" Teması</h3>
+                        <p>Kadınlar Günü, Down Sendromu Farkındalık Günü, 23 Nisan çocuk etkinlikleri. Çevre projelerinin yoğunlaşması.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Announcements Section -->
-    <section class="section section-light" id="announcements">
+    <!-- Activities -->
+    <section class="activities" id="activities">
         <div class="container">
             <div class="section-title">
-                <h2>Güncel Duyurular</h2>
-                <p class="subtitle">Kulübümüzdeki son gelişmeler ve yaklaşan etkinlikler</p>
+                <h2>Etkinliklerimiz</h2>
+                <p class="section-subtitle">Kulübümüzün düzenlediği başlıca etkinlik ve çalışma alanları</p>
             </div>
             
-            <div class="announcements-grid">
-                <div class="announcement-card">
-                    <div class="announcement-header">
-                        <div class="announcement-icon">
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3>Çevre Projeleri</h3>
+                        <p>Sürdürülebilirlik ve doğa koruma</p>
+                    </div>
+                    <div class="activity-body">
+                        <p>Geri dönüşüm sistemleri, çevre bilinci seminerleri, doğa koruma projeleri ve "TILT ve Doğa" temalı çalışmalar.</p>
+                        <div class="activity-tags">
+                            <span class="tag">EcoCatch</span>
+                            <span class="tag">Geri Dönüşüm</span>
+                            <span class="tag">Sürdürülebilirlik</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Sağlık Farkındalığı</h3>
+                        <p>Toplum sağlığı ve bilinçlendirme</p>
+                    </div>
+                    <div class="activity-body">
+                        <p>Mental sağlık seminerleri, engelli hakları çalışmaları, sağlık okuryazarlığı ve farkındalık kampanyaları.</p>
+                        <div class="activity-tags">
+                            <span class="tag">NeuroPrognos</span>
+                            <span class="tag">Mental Sağlık</span>
+                            <span class="tag">Farkındalık</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <div>
-                            <div class="announcement-title">Kulüp Tanışma Toplantısı</div>
-                            <div class="announcement-date">Eylül - 1. Hafta</div>
+                        <h3>Sosyal Sorumluluk</h3>
+                        <p>Toplumsal duyarlılık projeleri</p>
+                    </div>
+                    <div class="activity-body">
+                        <p>Kadın hakları, çocuk hakları, sosyal eşitlik ve toplumsal sorunlara yönelik çalışmalar ve etkinlikler.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Toplum Hizmeti</span>
+                            <span class="tag">Eşitlik</span>
+                            <span class="tag">Farkındalık</span>
                         </div>
                     </div>
-                    <p>Yeni eğitim yılı kulüp tanışma toplantısı ve yönetim kurulu seçimleri. Tüm üyelerimizin katılımını bekliyoruz.</p>
-                </div>
-                
-                <div class="announcement-card">
-                    <div class="announcement-header">
-                        <div class="announcement-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div>
-                            <div class="announcement-title">Proje Departmanları</div>
-                            <div class="announcement-date">Eylül - 4. Hafta</div>
-                        </div>
-                    </div>
-                    <p>EcoCatch ve NeuroPrognos proje departmanları tanıtımı ve görev dağılımı. Proje ekiplerine katılmak için son hafta!</p>
-                </div>
-                
-                <div class="announcement-card">
-                    <div class="announcement-header">
-                        <div class="announcement-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div>
-                            <div class="announcement-title">Sosyal Sorumluluk Projeleri</div>
-                            <div class="announcement-date">Kasım - 3. Hafta</div>
-                        </div>
-                    </div>
-                    <p>Sosyal sorumluluk odaklı proje fikirleri araştırması ve alan belirleme çalışmaları başlıyor.</p>
                 </div>
             </div>
         </div>
@@ -1063,15 +1027,9 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <div class="logo-symbol">T</div>
-                        <div class="logo-text">
-                            <div class="logo-main">TILT CLUB</div>
-                            <div class="logo-sub">FMV Işık Lisesi, Nişantaşı</div>
-                        </div>
-                    </div>
-                    <p>Sosyal sorumluluk, farkındalık ve sürdürülebilirlik projeleri geliştiren TILT destekli öğrenci kulübü.</p>
+                <div class="footer-col footer-about">
+                    <h3>TILT CLUB</h3>
+                    <p>FMV Işık Lisesi, Nişantaşı kampüsünde TILT İnisiyatifi desteğiyle faaliyet gösteren sosyal sorumluluk ve farkındalık kulübü.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
@@ -1080,37 +1038,35 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Hızlı Bağlantılar</h4>
+                    <h3>Hızlı Bağlantılar</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Ana Sayfa</a></li>
-                        <li><a href="#mission">Misyonumuz</a></li>
-                        <li><a href="#projects">Projeler</a></li>
-                        <li><a href="#timeline">Yıllık Plan</a></li>
-                        <li><a href="#announcements">Duyurular</a></li>
+                        <li><a href="#home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> Hakkımızda</a></li>
+                        <li><a href="#timeline"><i class="fas fa-calendar-alt"></i> Yıllık Plan</a></li>
+                        <li><a href="#activities"><i class="fas fa-hands-helping"></i> Etkinlikler</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>İletişim</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> FMV Işık Lisesi Kampüsü, Nişantaşı, İstanbul</p>
-                    <p><i class="fas fa-envelope"></i> elizyajanesandikcin.n24@fmvisik.k12.tr Kulüp Başkanı</p>
-                    <p><i class="fas fa-user-tie"></i> Danışman Öğretmen(ler): Gizem YÜCEL, İbrahim ERGİN, İsmail TÜRKOĞLU </p>
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> FMV Işık Lisesi, Nişantaşı</p>
+                    <p><i class="fas fa-envelope"></i> elizyajanesandikcin.n24@fmvisik.k12.tr (Kulüp Başkanı)</p>
+                    <p><i class="fas fa-user-tie"></i> Danışman Öğretmenler: Gizem YÜCEL, İbrahim ERGİN, İsmail TÜRKOĞLU</p>
                     <p><i class="fas fa-school"></i> Okul Müdürü: HAKAN KULABER</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2023 TILT Club - FMV Işık Lisesi. Tüm hakları saklıdır.</p>
-                <div class="tilt-acknowledgement">
-                    <p>TILT İnisiyatifi tarafından desteklenmektedir.</p>
-                    <a href="https://tiltinitiative.org" target="_blank">tiltinitiative.org</a>
-                </div>
+                <p>TILT İnisiyatifi tarafından desteklenmektedir. 
+                   <a href="https://tiltinitiative.org" target="_blank" class="tilt-link">tiltinitiative.org</a>
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         
@@ -1121,7 +1077,7 @@
                 : '<i class="fas fa-bars"></i>';
         });
         
-        // Close mobile menu when clicking on a link
+        // Close menu on link click
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -1129,17 +1085,7 @@
             });
         });
         
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1150,14 +1096,24 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Add active class to current nav item
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.03)';
+            }
+        });
+        
+        // Active nav link
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');

@@ -71,7 +71,7 @@
             padding: 0 32px;
         }
 
- /* Enhanced Header with Theme Toggle */
+        /* Enhanced Header with Theme Toggle */
         header {
             position: fixed;
             width: 100%;
@@ -775,99 +775,19 @@
             width: 100%;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .members-hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .members-hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .members-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 24px;
-            }
-            
-            .member-header,
-            .member-body {
-                padding: 30px;
-            }
-            
-            .tilt-banner {
-                padding: 40px 20px;
-            }
-            
-            .tilt-banner h3 {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .members-hero {
-                padding: 140px 0 60px;
-            }
-            
-            .members-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-              /* Responsive Design - Enhanced */
-        @media (max-width: 1400px) {
+        /* Responsive Design */
+        @media (max-width: 1200px) {
             .container {
                 max-width: 1200px;
                 padding: 0 24px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 3.2rem;
             }
             
             .section-title h2 {
                 font-size: 2.6rem;
             }
-            
-            .mission-grid {
-                gap: 60px;
-            }
         }
 
         @media (max-width: 992px) {
-            .mission-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 70px);
-                margin-left: 70px !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-marker {
-                left: -50px !important;
-                right: auto !important;
-            }
-            
             .header-controls {
                 gap: 15px;
             }
@@ -933,77 +853,52 @@
                 border-bottom: none;
             }
             
-            .hero {
-                padding: 140px 0 80px;
-                text-align: center;
-                min-height: auto;
-            }
-            
-            .hero-content {
-                text-align: center;
-            }
-            
-            .hero-title {
+            .members-hero h1 {
                 font-size: 2.8rem;
             }
             
-            .hero-description {
-                font-size: 1.2rem;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .section {
-                padding: 100px 0;
+            .members-hero p {
+                font-size: 1.1rem;
             }
             
             .section-title h2 {
                 font-size: 2.4rem;
             }
             
-            .cta-buttons {
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
+            .members-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 24px;
             }
             
-            .btn {
-                width: 100%;
-                max-width: 320px;
-                justify-content: center;
+            .member-header,
+            .member-body {
+                padding: 30px;
             }
             
-            .activity-header,
-            .activity-body {
-                padding: 32px;
+            .tilt-banner {
+                padding: 40px 20px;
             }
             
-            .activities-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mission-stats {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .stat-item {
-                padding: 24px;
+            .tilt-banner h3 {
+                font-size: 1.8rem;
             }
         }
 
         @media (max-width: 576px) {
-            .hero {
-                padding: 120px 0 60px;
+            .container {
+                padding: 0 20px;
             }
             
-            .hero-title {
-                font-size: 2.4rem;
+            .members-hero {
+                padding: 140px 0 60px;
             }
             
-            .hero-badge {
-                font-size: 0.85rem;
-                padding: 12px 24px;
+            .members-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .members-grid {
+                grid-template-columns: 1fr;
             }
             
             .section-title h2 {
@@ -1012,10 +907,6 @@
             
             .section-title .subtitle {
                 font-size: 1.1rem;
-            }
-            
-            .container {
-                padding: 0 20px;
             }
             
             .footer-grid {
@@ -1031,21 +922,12 @@
         }
 
         @media (max-width: 400px) {
-            .hero-title {
+            .members-hero h1 {
                 font-size: 2rem;
-            }
-            
-            .hero-description {
-                font-size: 1.1rem;
             }
             
             .section-title h2 {
                 font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 18px 24px;
-                font-size: 1rem;
             }
         }
     </style>
@@ -1054,7 +936,7 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <a href="#home" class="logo">
+            <a href="/" class="logo">
                 <img 
                     src="https://raw.githubusercontent.com/elizyasandikcii/TILT_Club/refs/heads/main/TILT%20Logos.png"
                     alt="TILT Club Logo"
@@ -1078,11 +960,10 @@
             
             <nav>
                 <ul id="navMenu">
-                    <li><a href="/" class="active"><i class="fas fa-home"></i> <- Ana Sayfaya Dön</a></li>
+                    <li><a href="/TILT_Club"><i class="fas fa-home"></i> Ana Sayfaya Dön</a></li>
                     <li><a href="#yk"><i class="fas fa-user-tie"></i> Yönetim Kurulu</a></li>
                     <li><a href="#members"><i class="fas fa-users"></i> Üyeler</a></li>
-                    <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Akademik Danışmanlar</a></li>
-                  <li><a href="#contact"><i class="fas fa-envelope"></i> İletişim</a></li>
+                    <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Danışmanlar</a></li>
                 </ul>
             </nav>
             
@@ -1091,8 +972,9 @@
             </button>
         </div>
     </header>
+
     <!-- Hero Section -->
-    <section class="members-hero">
+    <section class="members-hero" id="home">
         <div class="container">
             <h1 class="animate__animated animate__fadeInDown">Üyelerimiz</h1>
             <p class="animate__animated animate__fadeInUp animate__delay-1s">
@@ -1225,7 +1107,7 @@
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Çevre ve Sürdülülebilirlik işlerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Çevre ve Sürdürülebilirlik işlerinden sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
 
@@ -1418,8 +1300,25 @@
         </div>
     </section>
 
+    <!-- TILT Initiative Banner -->
+    <section class="container">
+        <div class="tilt-banner">
+            <div class="tilt-banner-content">
+                <h3>TILT İnisiyatifi Desteği</h3>
+                <p>
+                    TILT Kulübü, TILT İnisiyatifi'nin bir parçası olarak gençlerin sosyal sorumluluk 
+                    ve liderlik becerilerini geliştirmeyi hedeflemektedir. TILT misyonu doğrultusunda, 
+                    öğrencilerin toplumsal etki yaratmaları için gerekli kaynakları ve desteği sağlıyoruz.
+                </p>
+                <a href="https://tiltinitiative.org" target="_blank" rel="noopener noreferrer" class="btn-tilt">
+                    <i class="fas fa-external-link-alt"></i>
+                    TILT İnisiyatifi Ana Sitesini Ziyaret Edin
+                </a>
+            </div>
+        </div>
+    </section>
 
-       <!-- Footer -->
+    <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
@@ -1438,11 +1337,10 @@
                 <div class="footer-col">
                     <h3>Hızlı Bağlantılar</h3>
                     <ul class="footer-links">     
-                    <li><a href="/" class="active"><i class="fas fa-home"></i> <- Ana Sayfaya Dön</a></li>
+                    <li><a href="/TILT_Club"><i class="fas fa-home"></i> Ana Sayfaya Dön</a></li>
                     <li><a href="#yk"><i class="fas fa-user-tie"></i> Yönetim Kurulu</a></li>
                     <li><a href="#members"><i class="fas fa-users"></i> Üyeler</a></li>
-                    <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Akademik Danışmanlar</a></li>
-                  <li><a href="#contact"><i class="fas fa-envelope"></i> İletişim</a></li>
+                    <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Danışmanlar</a></li>
                     </ul>
                 </div>
                 
@@ -1464,82 +1362,35 @@
         </div>
     </footer>
 
-  <!-- Back to Top Button -->
+    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
-  
-      <!-- Enhanced Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script>
-        // Enhanced Loading Screen
-        window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            setTimeout(() => {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                    // Initialize animations
-                    initAnimations();
-                }, 600);
-            }, 1000);
-        });
-
-        // Particle Background
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#00d4ff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#57c1eb",
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
-                }
-            },
-            retina_detect: true
-        });
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         const headerControls = document.getElementById('headerControls');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            headerControls.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                headerControls.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
         
         // Close mobile menu when clicking on a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                headerControls.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    headerControls.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
             });
         });
         
@@ -1633,95 +1484,48 @@
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            });
+        }
         
         // Language Switcher
         const langButtons = document.querySelectorAll('.lang-btn');
         
-        langButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const lang = button.getAttribute('data-lang');
-                
-                // Update active state
-                langButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Show language change notification
-                showNotification(`Dil ${lang === 'tr' ? 'Türkçe' : 'İngilizce'} olarak değiştirilecek`, 'info');
-                
-                // In a real implementation, this would load the appropriate language file
-                // window.location.href = lang === 'tr' ? 'index.html' : 'index-en.html';
+        if (langButtons.length > 0) {
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const lang = button.getAttribute('data-lang');
+                    
+                    // Update active state
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Show language change notification
+                    showNotification(`Dil ${lang === 'tr' ? 'Türkçe' : 'İngilizce'} olarak değiştirilecek`, 'info');
+                });
+            });
+        }
+        
+        // Add hover effects to member cards
+        document.querySelectorAll('.member-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
             });
         });
-        
-        // Animated Counter for Stats
-        function animateCounter(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.textContent = Math.floor(progress * (end - start) + start) + (end === 100 ? '%' : '+');
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-        
-        // Initialize animations when in viewport
-        function initAnimations() {
-            const stats = document.querySelectorAll('.stat-number');
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            
-            // Animate stats
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const stat = entry.target;
-                        const count = parseInt(stat.getAttribute('data-count'));
-                        animateCounter(stat, 0, count, 2000);
-                        statsObserver.unobserve(stat);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            stats.forEach(stat => statsObserver.observe(stat));
-            
-            // Animate timeline items
-            const timelineObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        timelineObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.3 });
-            
-            timelineItems.forEach(item => timelineObserver.observe(item));
-            
-            // Add hover effects to cards
-            document.querySelectorAll('.activity-card, .stat-item').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = this.classList.contains('activity-card') 
-                        ? 'translateY(-12px)' 
-                        : 'translateY(-5px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-        }
         
         // Notification System
         function showNotification(message, type = 'info') {
@@ -1777,115 +1581,25 @@
             }, 3000);
         }
         
-        // Gallery Lightbox
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const imgSrc = this.querySelector('img').src;
-                const imgAlt = this.querySelector('img').alt;
-                
-                const lightbox = document.createElement('div');
-                lightbox.className = 'lightbox';
-                lightbox.innerHTML = `
-                    <div class="lightbox-content">
-                        <img src="${imgSrc}" alt="${imgAlt}">
-                        <button class="lightbox-close"><i class="fas fa-times"></i></button>
-                    </div>
-                `;
-                
-                document.body.appendChild(lightbox);
-                
-                // Add styles for lightbox
-                const lightboxStyle = document.createElement('style');
-                lightboxStyle.textContent = `
-                    .lightbox {
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0,0,0,0.9);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        z-index: 10000;
-                        animation: fadeIn 0.3s ease;
-                    }
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-                    .lightbox-content {
-                        position: relative;
-                        max-width: 90%;
-                        max-height: 90%;
-                    }
-                    .lightbox-content img {
-                        width: 100%;
-                        height: auto;
-                        border-radius: 12px;
-                    }
-                    .lightbox-close {
-                        position: absolute;
-                        top: -50px;
-                        right: 0;
-                        background: none;
-                        border: none;
-                        color: white;
-                        font-size: 2rem;
-                        cursor: pointer;
-                        transition: transform 0.3s ease;
-                    }
-                    .lightbox-close:hover {
-                        transform: rotate(90deg);
-                    }
-                `;
-                document.head.appendChild(lightboxStyle);
-                
-                // Close lightbox
-                lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
-                    document.body.removeChild(lightbox);
-                    document.head.removeChild(lightboxStyle);
-                });
-                
-                lightbox.addEventListener('click', (e) => {
-                    if (e.target === lightbox) {
-                        document.body.removeChild(lightbox);
-                        document.head.removeChild(lightboxStyle);
-                    }
-                });
-                
-                // Close with Escape key
-                document.addEventListener('keydown', function closeOnEscape(e) {
-                    if (e.key === 'Escape') {
-                        document.body.removeChild(lightbox);
-                        document.head.removeChild(lightboxStyle);
-                        document.removeEventListener('keydown', closeOnEscape);
-                    }
-                });
-            });
-        });
-        
         // Initialize on DOMContentLoaded
         document.addEventListener('DOMContentLoaded', () => {
             // Add subtle animation to hero elements
-            const heroElements = document.querySelectorAll('.hero-content > *');
+            const heroElements = document.querySelectorAll('.members-hero > .container > *');
             heroElements.forEach((el, index) => {
                 el.style.animationDelay = `${index * 0.2}s`;
             });
             
-            // Initialize tooltips
-            document.querySelectorAll('[title]').forEach(el => {
-                el.addEventListener('mouseenter', function() {
-                    const tooltip = document.createElement('div');
-                    tooltip.className = 'tooltip';
-                    tooltip.textContent = this.title;
-                    this.appendChild(tooltip);
-                });
+            // Animate member cards on load
+            const memberCards = document.querySelectorAll('.member-card');
+            memberCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 
-                el.addEventListener('mouseleave', function() {
-                    const tooltip = this.querySelector('.tooltip');
-                    if (tooltip) this.removeChild(tooltip);
-                });
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + (index * 50));
             });
         });
     </script>

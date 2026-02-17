@@ -1,8 +1,7 @@
-/* style.css - Cleaned and Optimized */
+/* style.css - Marine Deal News Inspired Version */
 
 /* ===========================================
-   CSS Variables - Enhanced Blue Theme
-   Based on index(6).html Marine Deal News style
+   CSS Variables - Marine Blue Theme
 =========================================== */
 
 :root {
@@ -41,7 +40,7 @@
     --gradient: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-light) 100%);
     --gradient-electric: linear-gradient(135deg, var(--accent-info) 0%, var(--primary-accent) 100%);
     
-    /* Shadows */
+    /* Shadows - Marine Deal */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -52,7 +51,7 @@
     --transition-normal: 250ms ease;
     --transition-slow: 350ms ease;
     
-    /* Border Radius */
+    /* Border Radius - Marine Deal */
     --radius-sm: 2px;
     --radius-md: 4px;
     --radius-lg: 8px;
@@ -70,23 +69,34 @@
     --space-9: 96px;
 }
 
-/* Dark Mode Variables */
+/* Dark Mode - Marine Deal Dark Variant */
 .dark-mode {
-    --primary-dark: #0d1117;
-    --neutral-0: #0a1931;
-    --neutral-50: #161b22;
-    --neutral-100: #21262d;
-    --neutral-200: #30363d;
-    --neutral-300: #484f58;
-    --neutral-400: #6e7681;
-    --neutral-500: #8b949e;
-    --neutral-600: #c9d1d9;
-    --neutral-700: #f0f6fc;
-    --neutral-800: #ffffff;
+    --primary-dark: #000a1a;
+    --primary-main: #001a33;
+    --primary-light: #00264d;
+    --primary-accent: #0059b3;
+    --secondary-dark: #1a2a3a;
+    --secondary-main: #2a3a4a;
+    --secondary-light: #3a4a5a;
+    --accent-info: #3f9fc0;
+    --accent-yellow: #ccb000;
+    --neutral-0: #0a1a2a;
+    --neutral-50: #0f1f30;
+    --neutral-100: #1a2a3a;
+    --neutral-200: #2a3a4a;
+    --neutral-300: #3a4a5a;
+    --neutral-400: #4a5a6a;
+    --neutral-500: #5a6a7a;
+    --neutral-600: #7a8a9a;
+    --neutral-700: #9aaaba;
+    --neutral-800: #bacada;
+    --neutral-900: #daeafa;
+    --gradient: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-light) 100%);
+    --gradient-electric: linear-gradient(135deg, var(--accent-info) 0%, var(--primary-accent) 100%);
 }
 
 /* ===========================================
-   RESET & BASE STYLES
+   RESET & BASE STYLES - Marine Deal
 =========================================== */
 
 * {
@@ -102,7 +112,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--neutral-800);
     background-color: var(--neutral-50);
@@ -152,7 +162,7 @@ img {
 }
 
 /* ===========================================
-   LOADING SCREEN
+   LOADING SCREEN - Marine Deal
 =========================================== */
 
 .loading-screen {
@@ -183,7 +193,7 @@ img {
 }
 
 /* ===========================================
-   HEADER - Professional Navigation
+   HEADER - Professional Marine Navigation
 =========================================== */
 
 header {
@@ -199,7 +209,7 @@ header {
 }
 
 .dark-mode header {
-    background: rgba(13, 17, 23, 0.95);
+    background: rgba(10, 26, 42, 0.95);
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
@@ -211,7 +221,7 @@ header {
     height: 80px;
 }
 
-/* Enhanced Logo */
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -232,7 +242,7 @@ header {
 }
 
 .logo:hover .logo-image {
-    transform: rotate(10deg) scale(1.05);
+    transform: rotate(5deg) scale(1.05);
 }
 
 .logo-text {
@@ -384,7 +394,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   HERO SECTIONS
+   HERO SECTIONS - Marine Deal Style
 =========================================== */
 
 .hero {
@@ -492,7 +502,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   BUTTONS
+   BUTTONS - Marine Deal
 =========================================== */
 
 .btn {
@@ -560,7 +570,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   SECTIONS
+   SECTIONS - Marine Deal
 =========================================== */
 
 .section {
@@ -609,7 +619,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   MISSION SECTION
+   MISSION SECTION - Marine Deal Cards
 =========================================== */
 
 .mission-grid {
@@ -672,7 +682,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   ACTIVITY CARDS
+   ACTIVITY CARDS - Marine Deal
 =========================================== */
 
 .activities-grid {
@@ -808,7 +818,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   TIMELINE
+   TIMELINE - Marine Deal
 =========================================== */
 
 .timeline {
@@ -921,7 +931,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   GALLERY SECTION
+   GALLERY SECTION - Marine Deal
 =========================================== */
 
 .gallery {
@@ -978,7 +988,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   MEMBER CARDS
+   MEMBER CARDS - Marine Deal
 =========================================== */
 
 .team-section {
@@ -1124,7 +1134,7 @@ nav a.active::after {
 }
 
 /* ===========================================
-   FOOTER
+   FOOTER - Marine Deal
 =========================================== */
 
 footer {
@@ -1310,7 +1320,7 @@ footer::before {
 }
 
 /* ===========================================
-   BACK TO TOP
+   BACK TO TOP - Marine Deal
 =========================================== */
 
 .back-to-top {
@@ -1346,7 +1356,7 @@ footer::before {
 }
 
 /* ===========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (unchanged, but uses new vars)
 =========================================== */
 
 @media (max-width: 1200px) {

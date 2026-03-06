@@ -3,55 +3,847 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üyelerimiz - TILT Kulübü</title>
+    <title>Üyelerimiz - TILT Kulübü @ FMV Işık Lisesi</title>
     <meta name="description" content="FMV Işık Lisesi TILT Kulübü üyeleri ve yönetim kurulu. Genç liderlerimizle tanışın.">
     <link rel="icon" href="https://raw.githubusercontent.com/elizyasandikcii/TILT_Club/refs/heads/main/Is%CC%A7%C4%B1k%20x%20TILT.png" type="image/png" />
-     <link rel="stylesheet" href="style.css">
-    <!-- Enhanced Libraries -->
+
+    <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
+    <style>
+        /* ===== MARINE DEAL VARIABLES (same as index) ===== */
+        :root {
+            --primary-dark: #001F3F;      /* Deep Navy */
+            --primary-main: #003366;      /* Marine Blue */
+            --primary-light: #0055A4;     /* Ocean Blue */
+            --primary-accent: #0074D9;    /* Bright Blue */
+            --secondary-dark: #2E4053;
+            --secondary-main: #566573;
+            --secondary-light: #85929E;
+            --accent-success: #2ECC71;
+            --accent-warning: #FF851B;
+            --accent-danger: #FF4136;
+            --accent-info: #7FDBFF;
+            --accent-yellow: #FFDC00;
+            --neutral-0: #FFFFFF;
+            --neutral-50: #F8F9FA;
+            --neutral-100: #E9ECEF;
+            --neutral-200: #DEE2E6;
+            --neutral-300: #CED4DA;
+            --neutral-400: #ADB5BD;
+            --neutral-500: #6C757D;
+            --neutral-600: #495057;
+            --neutral-700: #343A40;
+            --neutral-800: #212529;
+            --neutral-900: #000000;
+            --font-primary: 'Inter', 'Segoe UI', -apple-system, 'Roboto', sans-serif;
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-mono: 'SFMono-Regular', monospace;
+            --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+            --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px;
+            --radius-sm: 2px; --radius-md: 4px; --radius-lg: 8px; --radius-xl: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
+            --gradient: linear-gradient(135deg, var(--primary-main), var(--primary-light));
+            --gradient-electric: linear-gradient(135deg, var(--accent-info), var(--primary-accent));
+        }
+
+        .dark-mode {
+            --primary-dark: #000a1a;
+            --primary-main: #001a33;
+            --primary-light: #00264d;
+            --neutral-0: #0a1a2a;
+            --neutral-50: #0f1f30;
+            --neutral-100: #1a2a3a;
+            --neutral-200: #2a3a4a;
+            --neutral-300: #3a4a5a;
+            --neutral-400: #4a5a6a;
+            --neutral-500: #5a6a7a;
+            --neutral-600: #7a8a9a;
+            --neutral-700: #9aaaba;
+            --neutral-800: #bacada;
+            --neutral-900: #daeafa;
+            --gradient: linear-gradient(135deg, var(--primary-main), var(--primary-light));
+        }
+
+        /* ===== RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: var(--font-primary); line-height: 1.6;
+            color: var(--neutral-800); background-color: var(--neutral-50);
+            -webkit-font-smoothing: antialiased; transition: background-color var(--transition-normal);
+        }
+        h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); font-weight: 600; line-height: 1.3; margin-bottom: var(--space-4); }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } h3 { font-size: 1.75rem; }
+        p { margin-bottom: var(--space-4); }
+        a { color: var(--primary-light); text-decoration: none; transition: color var(--transition-fast); }
+        a:hover { color: var(--primary-accent); }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-6); }
+
+        /* ===== HEADER - same as index ===== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--neutral-200);
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dark-mode header {
+            background: rgba(13, 17, 23, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-3) 0;
+            height: 80px;
+        }
+
+        /* Enhanced Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            text-decoration: none;
+            transition: transform var(--transition-normal);
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+            transition: transform var(--transition-normal);
+        }
+
+        .logo:hover .logo-image {
+            transform: rotate(10deg) scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .dark-mode .logo-main {
+            background: var(--gradient-electric);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary-main);
+            margin-top: var(--space-1);
+            letter-spacing: 0.3px;
+        }
+
+        /* Header Controls */
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--neutral-100);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--primary-dark);
+            transition: all var(--transition-normal);
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            background: var(--neutral-200);
+            transform: rotate(15deg);
+        }
+
+        .dark-mode .theme-toggle {
+            color: var(--accent-info);
+            background: rgba(127, 219, 255, 0.1);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            background: var(--neutral-100);
+            border-radius: var(--radius-lg);
+            padding: var(--space-1);
+            border: 1px solid var(--neutral-200);
+        }
+
+        .lang-btn {
+            padding: var(--space-2) var(--space-4);
+            border: none;
+            background: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            color: var(--neutral-600);
+        }
+
+        .lang-btn.active {
+            background: var(--gradient);
+            color: var(--neutral-0);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-6);
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--neutral-600);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition-normal);
+            position: relative;
+            padding: var(--space-2) var(--space-1);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        nav a:hover {
+            color: var(--primary-main);
+        }
+
+        nav a.active {
+            color: var(--primary-main);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: var(--radius-sm);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: var(--neutral-100);
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: var(--space-3);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-normal);
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--neutral-200);
+            transform: rotate(90deg);
+        }
+
+        /* ===== MEMBERS HERO ===== */
+        .members-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-main));
+            color: var(--neutral-0);
+            padding: 180px 0 100px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .members-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+            color: var(--neutral-0);
+            position: relative;
+            z-index: 2;
+        }
+
+        .members-hero p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .team-section {
+            padding: var(--space-9) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: var(--space-4);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: var(--radius-sm);
+        }
+
+        .section-title .subtitle {
+            font-size: 1.2rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: var(--space-6) auto 0;
+            line-height: 1.7;
+        }
+
+        /* ===== MEMBERS GRID ===== */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-7);
+        }
+
+        .member-card {
+            background: var(--neutral-0);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+            transition: all var(--transition-normal);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .member-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .member-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .board-badge {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: var(--gradient-electric);
+            color: var(--neutral-0);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(127,219,255,0.4);
+            z-index: 2;
+        }
+
+        .member-header {
+            padding: var(--space-7) var(--space-7) var(--space-6);
+            background: linear-gradient(135deg, var(--neutral-50) 0%, transparent 100%);
+            text-align: center;
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-0);
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto var(--space-5);
+            box-shadow: 0 10px 25px rgba(0,51,102,0.2);
+            transition: var(--transition-normal);
+        }
+
+        .member-card:hover .member-avatar {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .member-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: var(--space-3);
+        }
+
+        .member-role {
+            display: inline-block;
+            padding: var(--space-2) var(--space-4);
+            background: var(--neutral-100);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--neutral-700);
+        }
+
+        .role-leadership {
+            background: var(--gradient-electric);
+            color: var(--neutral-0);
+        }
+
+        .role-teacher {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: var(--neutral-0);
+        }
+
+        .member-body {
+            padding: 0 var(--space-7) var(--space-7);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-body p {
+            color: var(--neutral-600);
+            margin-bottom: var(--space-6);
+            line-height: 1.7;
+        }
+
+        .member-contact {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+        }
+
+        .contact-link {
+            width: 40px;
+            height: 40px;
+            background: var(--neutral-100);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-main);
+            transition: all var(--transition-normal);
+            font-size: 1.1rem;
+        }
+
+        .contact-link:hover {
+            background: var(--gradient);
+            color: var(--neutral-0);
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER (same as index) ===== */
+        footer {
+            background: var(--primary-dark);
+            color: var(--neutral-0);
+            padding: var(--space-9) 0 var(--space-7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-info), transparent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-7);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+            color: var(--neutral-0);
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-info);
+        }
+
+        .footer-about p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-0);
+            transition: all var(--transition-normal);
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            background: var(--accent-info);
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(127,219,255,0.4);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-4);
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(10px);
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            transition: var(--transition-normal);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-2) 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-info);
+        }
+
+        .footer-links a i {
+            color: var(--accent-info);
+            width: 24px;
+        }
+
+        .footer-contact p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: var(--space-5);
+            display: flex;
+            gap: var(--space-4);
+            line-height: 1.6;
+        }
+
+        .footer-contact i {
+            color: var(--accent-info);
+            min-width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-7);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tilt-link {
+            color: var(--accent-info);
+            font-weight: 700;
+            transition: var(--transition-normal);
+            position: relative;
+        }
+
+        .tilt-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-info);
+            transition: width 0.3s ease;
+        }
+
+        .tilt-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-electric);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-0);
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ===== NOTIFICATION ===== */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: var(--neutral-0);
+            color: var(--primary-dark);
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+            border-left: 4px solid var(--primary-accent);
+        }
+
+        .notification i { font-size: 1.2rem; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .members-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: var(--neutral-0);
+                flex-direction: column;
+                padding: var(--space-6);
+                gap: 0;
+                box-shadow: var(--shadow-lg);
+                transition: var(--transition-normal);
+                height: calc(100vh - 80px);
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .dark-mode nav ul {
+                background: var(--primary-dark);
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul a {
+                display: block;
+                padding: var(--space-4) 0;
+                border-bottom: 1px solid var(--neutral-200);
+            }
+
+            .members-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .members-hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .members-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                gap: var(--space-6);
+            }
+
+            .back-to-top {
+                width: 48px;
+                height: 48px;
+                bottom: var(--space-4);
+                right: var(--space-4);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <a href="/" class="logo">
-                <img 
-                    src="https://raw.githubusercontent.com/elizyasandikcii/TILT_Club/refs/heads/main/TILT%20Logos.png"
-                    alt="TILT Club Logo"
-                    class="logo-image"
-                >
+            <a href="/TILT_Club" class="logo">
+                <img src="https://raw.githubusercontent.com/elizyasandikcii/TILT_Club/refs/heads/main/TILT%20Logos.png" alt="TILT Club Logo" class="logo-image">
                 <div class="logo-text">
                     <div class="logo-main">TILT Kulübü</div>
                     <div class="logo-sub">FMV Işık Lisesi, Nişantaşı</div>
                 </div>
             </a>
-            
+
             <div class="header-controls" id="headerControls">
                 <div class="language-switcher">
                     <button class="lang-btn active" data-lang="tr">TR</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
             </div>
-            
+
             <nav>
                 <ul id="navMenu">
-                    <li><a href="/TILT_Club"><i class="fas fa-home"></i> Ana Sayfaya Dön</a></li>
-                    <li><a href="#yk"><i class="fas fa-user-tie"></i> Yönetim Kurulu</a></li>
+                    <li><a href="/TILT_Club"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="#yk" class="active"><i class="fas fa-user-tie"></i> Yönetim</a></li>
                     <li><a href="#members"><i class="fas fa-users"></i> Üyeler</a></li>
                     <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Danışmanlar</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> İletişim</a></li>
                 </ul>
             </nav>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
@@ -82,9 +874,7 @@
                         <i class="fas fa-crown"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            ES
-                        </div>
+                        <div class="member-avatar">ES</div>
                         <h3 class="member-name">Elizya Jane SANDIKCI</h3>
                         <div class="member-role role-leadership">Kulüp Başkanı</div>
                     </div>
@@ -104,44 +894,40 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            NEŞ
-                        </div>
+                        <div class="member-avatar">NEŞ</div>
                         <h3 class="member-name">Nazlı Eylül ŞEN</h3>
                         <div class="member-role role-leadership">Genel Sekreter</div>
                     </div>
                     <div class="member-body">
-                        <p>Kulübün genel sekreteri.</p>
+                        <p>Kulübün genel sekreteri olarak tüm yazışma ve kayıt işlemlerinden sorumlu.</p>
                     </div>
                 </div>
+
                 <div class="member-card">
                     <div class="board-badge" title="Yönetim Kurulu">
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            AA
-                        </div>
+                        <div class="member-avatar">AA</div>
                         <h3 class="member-name">Azra AL</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Halkla ilişkilerden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Halkla ilişkiler ve iletişim çalışmalarından sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
+
                 <div class="member-card">
                     <div class="board-badge" title="Yönetim Kurulu">
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            DY
-                        </div>
+                        <div class="member-avatar">DY</div>
                         <h3 class="member-name">Duru YURTSEVER</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Kurucu Ortak.</p>
+                        <p>Kurucu ortak ve proje geliştirme ekibinde görev alıyor.</p>
                     </div>
                 </div>
 
@@ -150,14 +936,12 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            KO
-                        </div>
+                        <div class="member-avatar">KO</div>
                         <h3 class="member-name">Kutlu ONAY</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Teknoloji işlerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Teknoloji ve dijital platformlardan sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
 
@@ -166,14 +950,12 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            BK
-                        </div>
+                        <div class="member-avatar">BK</div>
                         <h3 class="member-name">Burak KÜÇÜKEL</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Kulübün finans işlerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Finans ve bütçe yönetiminden sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
 
@@ -182,14 +964,12 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            İA
-                        </div>
+                        <div class="member-avatar">İA</div>
                         <h3 class="member-name">İpek ACAR</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Çevre ve Sürdürülebilirlik işlerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Çevre ve sürdürülebilirlik projelerinden sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
 
@@ -198,14 +978,12 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            CÖ
-                        </div>
+                        <div class="member-avatar">CÖ</div>
                         <h3 class="member-name">Ceren ÖZGÖREN</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Kulübün operasyon görevlerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Operasyon ve etkinlik koordinasyonundan sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
 
@@ -214,14 +992,12 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            YP
-                        </div>
+                        <div class="member-avatar">YP</div>
                         <h3 class="member-name">Yağmur PADAR</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Kulübün yasal yükümlülüklerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Yasal işler ve resmi yazışmalardan sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
 
@@ -230,22 +1006,20 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="member-header">
-                        <div class="member-avatar">
-                            NK
-                        </div>
+                        <div class="member-avatar">NK</div>
                         <h3 class="member-name">Nihan KAFADAR</h3>
                         <div class="member-role role-leadership">Yönetim Kurulu Üyesi</div>
                     </div>
                     <div class="member-body">
-                        <p>Tasarım işlerinden sorumlu yönetim kurulu üyesi.</p>
+                        <p>Tasarım ve görsel içeriklerden sorumlu yönetim kurulu üyesi.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Etik Kurul ve Diğer Üyeler -->
-    <section class="team-section" style="background-color: var(--light-gray);" id="members">
+    <!-- Aktif Üyeler -->
+    <section class="team-section" style="background-color: var(--neutral-50);" id="members">
         <div class="container">
             <div class="section-title">
                 <h2>Aktif Üyelerimiz</h2>
@@ -256,9 +1030,7 @@
                 <!-- Etik Kurul Başkanı -->
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            UD
-                        </div>
+                        <div class="member-avatar">UD</div>
                         <h3 class="member-name">Uras DEMİRCAN</h3>
                         <div class="member-role role-leadership">Etik Kurul Öğrenci Başkanı</div>
                     </div>
@@ -270,9 +1042,7 @@
                 <!-- Diğer Aktif Üyeler -->
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            ADA
-                        </div>
+                        <div class="member-avatar">ADA</div>
                         <h3 class="member-name">Adem Doruk ARSLAN</h3>
                         <div class="member-role">Aktif Üye</div>
                     </div>
@@ -280,29 +1050,23 @@
 
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            ŞAT
-                        </div>
+                        <div class="member-avatar">ŞAT</div>
                         <h3 class="member-name">Şerif Ateş TAŞÇIOĞLU</h3>
                         <div class="member-role">Aktif Üye</div>
-                      </div>
+                    </div>
                 </div>
 
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            Dİ
-                        </div>
+                        <div class="member-avatar">Dİ</div>
                         <h3 class="member-name">Defne İLK</h3>
                         <div class="member-role">Aktif Üye</div>
-                      </div>
+                    </div>
                 </div>
 
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            SEB
-                        </div>
+                        <div class="member-avatar">SEB</div>
                         <h3 class="member-name">Sinem Elçin BENLİ</h3>
                         <div class="member-role">Aktif Üye</div>
                     </div>
@@ -310,9 +1074,7 @@
 
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            NS
-                        </div>
+                        <div class="member-avatar">NS</div>
                         <h3 class="member-name">Nehir SARITAŞ</h3>
                         <div class="member-role">Aktif Üye</div>
                     </div>
@@ -320,9 +1082,7 @@
 
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            ZK
-                        </div>
+                        <div class="member-avatar">ZK</div>
                         <h3 class="member-name">Zelal KARADENİZ</h3>
                         <div class="member-role">Aktif Üye</div>
                     </div>
@@ -330,9 +1090,7 @@
 
                 <div class="member-card">
                     <div class="member-header">
-                        <div class="member-avatar">
-                            AA
-                        </div>
+                        <div class="member-avatar">AA</div>
                         <h3 class="member-name">Ani AGBULUT</h3>
                         <div class="member-role">Aktif Üye</div>
                     </div>
@@ -382,7 +1140,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (updated with same info as index) -->
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
@@ -392,34 +1150,35 @@
                     faaliyet gösteren sosyal sorumluluk ve farkındalık kulübü.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/isikhs.tiltclub" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" id="youtubeLink"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" id="tiktokLink"><i class="fab fa-tiktok"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Hızlı Bağlantılar</h3>
-                    <ul class="footer-links">     
-                    <li><a href="/TILT_Club"><i class="fas fa-home"></i> Ana Sayfaya Dön</a></li>
-                    <li><a href="#yk"><i class="fas fa-user-tie"></i> Yönetim Kurulu</a></li>
-                    <li><a href="#members"><i class="fas fa-users"></i> Üyeler</a></li>
-                    <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Danışmanlar</a></li>
+                    <ul class="footer-links">
+                        <li><a href="/TILT_Club"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                        <li><a href="#yk"><i class="fas fa-user-tie"></i> Yönetim Kurulu</a></li>
+                        <li><a href="#members"><i class="fas fa-users"></i> Üyeler</a></li>
+                        <li><a href="#ad"><i class="fas fa-chalkboard-teacher"></i> Danışmanlar</a></li>
+                        <li><a href="mailto:elizyajanesandikci.n24@fmvisik.k12.tr"><i class="fas fa-envelope"></i> İletişim</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>İletişim</h3>
                     <p><i class="fas fa-map-marker-alt"></i> FMV Işık Lisesi, Nişantaşı, İstanbul</p>
-                    <p><i class="fas fa-envelope"></i> elizyajanesandikci.n24@fmvisik.k12.tr (Kulüp Başkanı)</p>
-                    <p><i class="fas fa-user-tie"></i> Danışman Öğretmenler: Gizem YÜCEL, İbrahim ERGİN</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:elizyajanesandikci.n24@fmvisik.k12.tr" style="color:var(--accent-info);">elizyajanesandikci.n24@fmvisik.k12.tr</a> (Kulüp Başkanı)</p>
+                    <p><i class="fas fa-user-tie"></i> Danışman Öğretmen: İbrahim ERGİN</p>
                     <p><i class="fas fa-school"></i> Okul Müdürü: Hakan KULABER</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 TILT Club - FMV Işık Lisesi. Tüm hakları saklıdır.</p>
-                <p>TILT İnisiyatifi tarafından desteklenmektedir. 
+                <p>&copy; 2026 TILT Kulübü - FMV Nişantaşı Işık Lisesi.</p>
+                <p>TILT Kulübü, TILT İnisiyatifinin bir parçasıdır. 
                    <a href="https://tiltinitiative.org" target="_blank" class="tilt-link">tiltinitiative.org</a>
                 </p>
             </div>
@@ -431,17 +1190,100 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Modal for YouTube/TikTok pop-ups (same as index) -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-icon"><i class="fas fa-info-circle"></i></div>
+            <h3 id="modalTitle">TILT Kulübünün YouTube'u</h3>
+            <p id="modalMessage">TILT Kulübünün YouTube kanalı çok yakında!</p>
+            <p>Daha fazla bilgi için: <a href="https://www.tiltinitiative.org/contact-us" target="_blank" class="modal-link">tiltinitiative.org/contact-us</a></p>
+        </div>
+    </div>
+
+    <style>
+        /* Modal styles (from index) */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: var(--neutral-0);
+            max-width: 500px;
+            width: 90%;
+            border-radius: var(--radius-xl);
+            padding: var(--space-7);
+            text-align: center;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform var(--transition-normal);
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--neutral-500);
+            transition: var(--transition-fast);
+        }
+        .modal-close:hover {
+            color: var(--primary-dark);
+            transform: rotate(90deg);
+        }
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--accent-info);
+            margin-bottom: var(--space-4);
+        }
+        .modal h3 {
+            color: var(--primary-dark);
+            margin-bottom: var(--space-4);
+        }
+        .modal p {
+            color: var(--neutral-600);
+            margin-bottom: var(--space-3);
+        }
+        .modal-link {
+            display: inline-block;
+            margin-top: var(--space-4);
+            color: var(--primary-accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    </style>
+
     <script>
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         const headerControls = document.getElementById('headerControls');
         
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 headerControls.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                mobileBtn.innerHTML = navMenu.classList.contains('active') 
                     ? '<i class="fas fa-times"></i>' 
                     : '<i class="fas fa-bars"></i>';
             });
@@ -453,12 +1295,12 @@
                 if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                     headerControls.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             });
         });
         
-        // Enhanced Header Scroll Effect
+        // Header scroll effect
         const header = document.getElementById('header');
         let lastScroll = 0;
         
@@ -467,8 +1309,6 @@
             
             if (currentScroll > 50) {
                 header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
-                header.style.backdropFilter = 'blur(20px)';
-                
                 if (currentScroll > lastScroll && currentScroll > 100) {
                     header.style.transform = 'translateY(-100%)';
                 } else {
@@ -476,11 +1316,10 @@
                 }
             } else {
                 header.style.boxShadow = 'var(--shadow-sm)';
-                header.style.backdropFilter = 'blur(20px)';
                 header.style.transform = 'translateY(0)';
             }
             
-            // Back to top button visibility
+            // Back to top button
             const backToTop = document.getElementById('backToTop');
             if (currentScroll > 300) {
                 backToTop.classList.add('visible');
@@ -491,33 +1330,22 @@
             lastScroll = currentScroll;
         });
         
-        // Enhanced Smooth Scroll
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
                 }
             });
         });
         
-        // Active Nav Link with Intersection Observer
+        // Active nav link
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('nav a[href^="#"]');
-        
-        const observerOptions = {
-            root: null,
-            rootMargin: '-20% 0px -80% 0px',
-            threshold: 0
-        };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -531,141 +1359,85 @@
                     });
                 }
             });
-        }, observerOptions);
+        }, { rootMargin: '-20% 0px -80% 0px' });
         
         sections.forEach(section => observer.observe(section));
         
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
         
-        // Check for saved theme or prefered scheme
-        const currentTheme = localStorage.getItem('theme') || 
-                            (prefersDarkScheme.matches ? 'dark' : 'light');
-        
-        if (currentTheme === 'dark') {
+        if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                
-                if (document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('theme', 'dark');
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                } else {
-                    localStorage.setItem('theme', 'light');
-                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                }
-            });
-        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
         
         // Language Switcher
-        const langButtons = document.querySelectorAll('.lang-btn');
-        
-        if (langButtons.length > 0) {
-            langButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const lang = button.getAttribute('data-lang');
-                    
-                    // Update active state
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    // Show language change notification
-                    showNotification(`Dil ${lang === 'tr' ? 'Türkçe' : 'İngilizce'} olarak değiştirilecek`, 'info');
-                });
-            });
-        }
-        
-        // Add hover effects to member cards
-        document.querySelectorAll('.member-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                showNotification(`Dil ${btn.dataset.lang === 'tr' ? 'Türkçe' : 'İngilizce'} olarak değiştirilecek`, 'info');
             });
         });
         
-        // Notification System
+        // Modal for YouTube/TikTok
+        const modal = document.getElementById('infoModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalClose = document.getElementById('modalClose');
+        
+        function showModal(title, message) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            modal.classList.add('show');
+        }
+        
+        document.getElementById('youtubeLink')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            showModal('TILT Kulübünün YouTube Kanalı', 'TILT Kulübünün YouTube kanalı çok yakında!');
+        });
+        
+        document.getElementById('tiktokLink')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            showModal('TILT Kulübünün TikTok Hesabı', 'TILT Kulübünün TikTok hesabı çok yakında!');
+        });
+        
+        modalClose?.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+        
+        // Notification system
         function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.innerHTML = `
-                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-                <span>${message}</span>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Add styles for notification
-            const style = document.createElement('style');
-            style.textContent = `
-                .notification {
-                    position: fixed;
-                    top: 100px;
-                    right: 30px;
-                    background: var(--white);
-                    color: var(--primary-dark);
-                    padding: 16px 24px;
-                    border-radius: 12px;
-                    box-shadow: var(--shadow-xl);
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    z-index: 10000;
-                    transform: translateX(400px);
-                    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                    border-left: 4px solid var(--primary-blue);
-                }
-                .notification.success { border-left-color: #10b981; }
-                .notification.error { border-left-color: #ef4444; }
-                .notification.info { border-left-color: var(--electric-blue); }
-                .notification i { font-size: 1.2rem; }
-                .notification.success i { color: #10b981; }
-                .notification.error i { color: #ef4444; }
-                .notification.info i { color: var(--electric-blue); }
-            `;
-            document.head.appendChild(style);
-            
+            const notif = document.createElement('div');
+            notif.className = `notification ${type}`;
+            notif.innerHTML = `<i class="fas fa-${type==='success'?'check-circle':type==='error'?'exclamation-circle':'info-circle'}"></i><span>${message}</span>`;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.style.transform = 'translateX(0)', 10);
             setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 10);
-            
-            setTimeout(() => {
-                notification.style.transform = 'translateX(400px)';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                    document.head.removeChild(style);
-                }, 400);
+                notif.style.transform = 'translateX(400px)';
+                setTimeout(() => document.body.removeChild(notif), 400);
             }, 3000);
         }
-        
-        // Initialize on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add subtle animation to hero elements
-            const heroElements = document.querySelectorAll('.members-hero > .container > *');
-            heroElements.forEach((el, index) => {
-                el.style.animationDelay = `${index * 0.2}s`;
-            });
-            
-            // Animate member cards on load
-            const memberCards = document.querySelectorAll('.member-card');
-            memberCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 + (index * 50));
-            });
-        });
     </script>
 </body>
 </html>
